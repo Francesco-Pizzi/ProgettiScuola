@@ -13,9 +13,7 @@ public class PersonaDeserializer implements JsonDeserializer<Persona> {
         String nome = jsonObject.get("nome").getAsString();
         String cognome = jsonObject.get("cognome").getAsString();
         String cf = jsonObject.get("cf").getAsString();
-        int eta = jsonObject.get("eta").getAsInt();
         Persona p = new Persona(nome, cognome, cf);
-        p.setEta(eta);
         return p;
     }
 }

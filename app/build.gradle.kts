@@ -37,5 +37,5 @@ java {
 
 application {
     // Define the main class for the application.
-    mainClass = "it.unicam.mdp_mgc_2026.persistence.serialize.MainSerialize"
+    mainClass = "it.unicam.mdp_mgc_2026.persistence.json.GsonParser"
 }

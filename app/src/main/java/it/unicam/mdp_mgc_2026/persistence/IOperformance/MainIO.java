@@ -1,4 +1,4 @@
-package it.unicam.mdp_mgc_2026.IOperformance;
+package it.unicam.mdp_mgc_2026.persistence.IOperformance;
 
 public class MainIO {
     public static void main(String[] args) {

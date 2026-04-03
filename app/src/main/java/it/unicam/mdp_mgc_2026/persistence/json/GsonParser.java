@@ -18,7 +18,7 @@ public class GsonParser {
         }
     }
 
-    public static Object readGsonObj(String file){
+    public static Persona readGsonObj(String file){
         try (FileReader reader = new FileReader(file)) {
             return gson.fromJson(reader, Persona.class);
         } catch (IOException e) {
@@ -46,13 +46,13 @@ public class GsonParser {
     }
 
     public static void main(String[] args){
-        gson = new GsonBuilder().setPrettyPrinting().create();
-        //esempioCampieArray();
+//        gson = new GsonBuilder().setPrettyPrinting().create();
+//        //esempioCampieArray();
         Persona p1 = new Persona("Lorenzo","Rossi","C");
-        p1.setEta(37);
-        writeGsonObj(p1,"persona.json");
-        Persona p2 = (Persona) readGsonObj("persona.json");
-        System.out.println(p2.getEta());
+//        p1.setEta(37);
+//        writeGsonObj(p1,"persona.json");
+//        Persona p2 = (Persona) readGsonObj("persona.json");
+//        System.out.println(p2.getEta());
 
         //Handler specifico
         gson = new GsonBuilder()
@@ -62,6 +62,7 @@ public class GsonParser {
                 .create();
 
         writeGsonObj(p1,"persona.json");
-        Persona p3 = (Persona) readGsonObj("persona.json");
+        Persona p3 = readGsonObj("persona.json");
+        System.out.println(p3.getEta());
     }
 }

@@ -1,13 +1,12 @@
 package it.unicam.mdp_mgc_2026.annotations;
 
-
-import it.unicam.mdp_mgc_2026.palla8.Palla8;
 import lombok.NonNull;
 
 import java.io.Serializable;
 
 /**
- * Questa classe implementa il concetto di persona ai soli fini didattici per i corsi di Metodolgie di Programmmazione e Modella zione e Gestione della Conoscenza.
+ * Questa classe implementa il concetto di persona ai soli fini didattici per i corsi di
+ * Metodolgie di Programmmazione e Modella zione e Gestione della Conoscenza.
  *
  * @author Lorenzo Rossi
  *

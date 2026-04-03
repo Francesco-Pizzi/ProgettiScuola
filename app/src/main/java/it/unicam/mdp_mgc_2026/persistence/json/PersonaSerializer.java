@@ -15,7 +15,6 @@ public class PersonaSerializer implements JsonSerializer<Persona> {
         jsonObject.addProperty("nome", p.getNome());
         jsonObject.addProperty("cognome", p.getCognome());
         jsonObject.addProperty("cf", p.getCf());
-        jsonObject.addProperty("eta", p.getEta());
         return jsonObject;
     }
 }
