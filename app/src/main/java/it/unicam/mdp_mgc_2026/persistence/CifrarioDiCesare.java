@@ -27,14 +27,18 @@ public class CifrarioDiCesare {
                 case CRYPT -> enc += privateKey;
                 case DECRYPT -> enc -= privateKey;
             }
-            message[i] = (char) (enc%Character.MAX_VALUE);
+            enc = enc%Character.MAX_VALUE;
+            if (enc < 0){
+                enc += Character.MAX_VALUE;
+            }
+            message[i] = (char) enc;
         }
         return message;
     }
 
     public static void main(String[] args) {
         //Scrittura file criptato
-        int key = 20000;
+        int key = -20000;
         char[] encripted = encrypt_decript(key, "Messaggio segreto!".toCharArray(), Modality.CRYPT);
         char[] decripted = encrypt_decript(key, encripted.clone(), Modality.DECRYPT);
         System.out.println(encripted);

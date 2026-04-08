@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE menu [
+        <!ELEMENT menu (piatti+,menudelgiorno)>
+        <!ELEMENT piatti (piatto*)>
+        <!ELEMENT piatto (nome,prezzo,descrizione)>
+        <!ELEMENT nome (#PCDATA)>
+        <!ELEMENT prezzo (#PCDATA)>
+        <!ELEMENT descrizione (#PCDATA)>
+        <!ATTLIST piatto id ID #REQUIRED>
+        <!ELEMENT menudelgiorno (primi,secondi)>
+        <!ATTLIST menudelgiorno giorno CDATA #REQUIRED>
+        <!ELEMENT primi (primo*)>
+        <!ELEMENT secondi (secondo*)>
+        <!ELEMENT primo EMPTY>
+        <!ATTLIST primo idRef IDREF #REQUIRED>
+        <!ELEMENT secondo EMPTY>
+        <!ATTLIST secondo idRef IDREF #REQUIRED>
+        ]>
+<menu>
+    <piatti>
+        <piatto id="a00001">
+            <nome>Pasta al Pomodoro</nome>
+            <prezzo>5</prezzo>
+            <descrizione>Spaghettoni De Cecco con salsa di pomodoro.</descrizione>
+        </piatto>
+        <piatto id="a00002">
+            <nome>Pasta al Pesto</nome>
+            <prezzo>5</prezzo>
+            <descrizione>Trofie acqua e farinoa con pesto D.O.P.</descrizione>
+        </piatto>
+        <piatto id="a00003">
+            <nome>Tortellini alla Norcina</nome>
+            <prezzo>7</prezzo>
+            <descrizione>Tortellini di carne con panna funghi e salsiccia.</descrizione>
+        </piatto>
+        <piatto id="a00010">
+            <nome>Bistecca ai Ferri</nome>
+            <prezzo>9</prezzo>
+            <descrizione>Controfiletto di Manzo cotto alla griglia.</descrizione>
+        </piatto>
+        <piatto id="a00011">
+            <nome>Pollo al Forno</nome>
+            <prezzo>8</prezzo>
+            <descrizione>Pollo cotto al forno con patate arrosto.</descrizione>
+        </piatto>
+    </piatti>
+    <menudelgiorno giorno="12/03/2023">
+        <primi>
+            <primo idRef="a00001"/>
+            <primo idRef="a00003"/>
+        </primi>
+        <secondi>
+            <secondo idRef="a00010"/>
+        </secondi>
+    </menudelgiorno>
+</menu>

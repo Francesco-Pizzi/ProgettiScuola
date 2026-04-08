@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<libro xmlns="http://www.unicam.it" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" titolo="Corso di XML" xsi:schemaLocation="customSchema.xsd">
+        
+    <autore>
+                
+        <nome>Lorenzo</nome>
+                
+        <cognome>Rossi</cognome>
+            
+    </autore>
+        
+    <autore>
+                
+        <nome>Andrea</nome>
+                
+        <cognome>Morichetta</cognome>
+            
+    </autore>
+        
+    <capitolo titolo="SAX and DOM">Lorem ipsum dolor sit. . .</capitolo>
+    
+    <capitolo titolo="Introduzione">... testo  ...</capitolo>
+</libro>
