@@ -64,6 +64,7 @@ public class IOperformance {
             String n = fr.readLine();
             while (n != null){
                 fw.write(n);
+                fw.newLine();
                 n = fr.readLine();
             }
             fr.close();

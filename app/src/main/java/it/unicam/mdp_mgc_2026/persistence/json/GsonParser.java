@@ -47,7 +47,7 @@ public class GsonParser {
 
     public static void main(String[] args){
 //        gson = new GsonBuilder().setPrettyPrinting().create();
-//        //esempioCampieArray();
+//        esempioCampieArray();
         Persona p1 = new Persona("Lorenzo","Rossi","C");
 //        p1.setEta(37);
 //        writeGsonObj(p1,"persona.json");
