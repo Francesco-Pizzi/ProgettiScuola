@@ -1,9 +1,15 @@
-.idea
-.gradle
-.git
-app/build
-build
+# IntelliJ
+.idea/
+*.iml
+out/
 
-#Lezioni
-#/app/src/main/java/it/unicam/mdp_mgc_2026/annotation/
-/app/src/main/java/it/unicam/mdp_mgc_2026/persistence/xml/
+# Gradle
+.gradle/
+build/
+**/build/
+
+# OS (opzionale ma consigliato)
+.DS_Store
+Thumbs.db
+
+# (NON TOCCARE .git !!!)
