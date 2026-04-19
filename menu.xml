@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ristorante>
+
+    <menu nome="Menu Principale">
+        <cibi>
+            <piatto>
+                <nome>Bruschetta all'olio Umbro</nome>
+                <descrizione>Pane tostato con olio extravergine umbro</descrizione>
+                <categoria>ANTIPASTO</categoria>
+                <prezzo>3.50</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Bruschette miste</nome>
+                <descrizione>Selezione di bruschette con pomodoro, paté e tartufo</descrizione>
+                <categoria>ANTIPASTO</categoria>
+                <prezzo>6.50</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Bruschetta al tartufo</nome>
+                <descrizione>Pane tostato con scaglie al tartufo nero</descrizione>
+                <categoria>ANTIPASTO</categoria>
+                <prezzo>6.50</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Tagliere della casa</nome>
+                <descrizione>Salumi umbri, pecorino stagionato e miele</descrizione>
+                <categoria>ANTIPASTO</categoria>
+                <prezzo>12.00</prezzo>
+                <allergeni>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Strangozzi alla spoletina</nome>
+                <descrizione>Pomodoro, peperoncino e aglio fresco</descrizione>
+                <categoria>PRIMO</categoria>
+                <prezzo>8.00</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Strangozzi al tartufo</nome>
+                <descrizione>Pasta fresca con scaglie di tartufo e olio evo</descrizione>
+                <categoria>PRIMO</categoria>
+                <prezzo>14.00</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+
+	    <piatto>
+                <nome>Zuppa di lenticchie</nome>
+                <descrizione>Con crostini di pane tostato</descrizione>
+                <categoria>PRIMO</categoria>
+                <prezzo>9.00</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Lasagna al forno</nome>
+                <descrizione>Con ragù e besciamella</descrizione>
+                <categoria>PRIMO</categoria>
+                <prezzo>10.50</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                    <allergene>3</allergene>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Gnocchi al sugo d'anatra</nome>
+                <descrizione>Gnocchi di patate con ragù bianco d'anatra</descrizione>
+                <categoria>PRIMO</categoria>
+                <prezzo>11.00</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                    <allergene>3</allergene>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Frittata al tartufo</nome>
+                <descrizione>Uova e tartufo nero locale</descrizione>
+                <categoria>SECONDO</categoria>
+                <prezzo>10.00</prezzo>
+                <allergeni>
+                    <allergene>3</allergene>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Straccetti di manzo</nome>
+                <descrizione>Rucola, pomodorini e scaglie di grana</descrizione>
+                <categoria>SECONDO</categoria>
+                <prezzo>9.00</prezzo>
+                <allergeni>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+
+	    <piatto>
+                <nome>Pollo arrosto con patate</nome>
+                <descrizione>Secondo del giorno</descrizione>
+                <categoria>SECONDO</categoria>
+                <prezzo>11.00</prezzo>
+                <allergeni>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Tagliata di manzo</nome>
+                <descrizione>Con rosmarino e sale grosso</descrizione>
+                <categoria>SECONDO</categoria>
+                <prezzo>16.00</prezzo>
+                <allergeni>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Crescionda</nome>
+                <descrizione>Dolce spoletino con amaretti e cioccolato</descrizione>
+                <categoria>DOLCE</categoria>
+                <prezzo>4.00</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                    <allergene>3</allergene>
+                    <allergene>5</allergene>
+                    <allergene>6</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Tozzetti e Sagrantino</nome>
+                <descrizione>Biscotti secchi alle mandorle serviti con vino passito</descrizione>
+                <categoria>DOLCE</categoria>
+                <prezzo>5.00</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                    <allergene>3</allergene>
+                    <allergene>6</allergene>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Tiramisù della casa</nome>
+                <descrizione>Con mascarpone e cacao amaro</descrizione>
+                <categoria>DOLCE</categoria>
+                <prezzo>5.50</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                    <allergene>3</allergene>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+        </cibi>
+
+        <bevande>
+            <bevanda>
+                <nome>Acqua Naturale</nome>
+                <descrizione>Bottiglia in vetro</descrizione>
+                <tipo>ACQUA</tipo>
+                <opzioniPrezzo>
+                    <opzione>
+                        <formato>Bottiglia 50cl</formato>
+                        <prezzo>1.50</prezzo>
+                    </opzione>
+                    <opzione>
+                        <formato>Bottiglia 1l</formato>
+                        <prezzo>2.50</prezzo>
+                    </opzione>
+                </opzioniPrezzo>
+            </bevanda>
+
+            <bevanda>
+                <nome>Acqua Frizzante</nome>
+                <descrizione>Bottiglia in vetro</descrizione>
+                <tipo>ACQUA</tipo>
+                <opzioniPrezzo>
+                    <opzione>
+                        <formato>Bottiglia 50cl</formato>
+                        <prezzo>1.50</prezzo>
+                    </opzione>
+                    <opzione>
+                        <formato>Bottiglia 1l</formato>
+                        <prezzo>2.50</prezzo>
+                    </opzione>
+                </opzioniPrezzo>
+            </bevanda>
+
+            <bevanda>
+                <nome>Coca Cola</nome>
+                <tipo>BIBITA</tipo>
+                <opzioniPrezzo>
+                    <opzione>
+                        <formato>Lattina 33cl</formato>
+                        <prezzo>3.00</prezzo>
+                    </opzione>
+                    <opzione>
+                        <formato>Bottiglia 1l</formato>
+                        <prezzo>6.00</prezzo>
+                    </opzione>
+                </opzioniPrezzo>
+            </bevanda>
+
+            <bevanda>
+                <nome>Fanta</nome>
+                <tipo>BIBITA</tipo>
+                <opzioniPrezzo>
+                    <opzione>
+                        <formato>Lattina 33cl</formato>
+                        <prezzo>3.00</prezzo>
+                    </opzione>
+                    <opzione>
+                        <formato>Bottiglia 1l</formato>
+                        <prezzo>6.00</prezzo>
+                    </opzione>
+                </opzioniPrezzo>
+            </bevanda>
+
+            <bevanda>
+                <nome>Birra alla Spina Bionda</nome>
+                <descrizione>Birra chiara alla spina</descrizione>
+                <tipo>BIRRA</tipo>
+                <opzioniPrezzo>
+                    <opzione>
+                        <formato>Piccola</formato>
+                        <prezzo>3.50</prezzo>
+                    </opzione>
+                    <opzione>
+                        <formato>Media</formato>
+                        <prezzo>5.00</prezzo>
+                    </opzione>
+                    <opzione>
+                        <formato>Grande</formato>
+                        <prezzo>6.50</prezzo>
+                    </opzione>
+                </opzioniPrezzo>
+            </bevanda>
+
+            <bevanda>
+                <nome>Birra Rossa Artigianale</nome>
+                <descrizione>Birra rossa in bottiglia</descrizione>
+                <tipo>BIRRA</tipo>
+                <opzioniPrezzo>
+                    <opzione>
+                        <formato>Bottiglia 33cl</formato>
+                        <prezzo>4.50</prezzo>
+                    </opzione>
+                    <opzione>
+                        <formato>Bottiglia 50cl</formato>
+                        <prezzo>6.00</prezzo>
+                    </opzione>
+                </opzioniPrezzo>
+            </bevanda>
+        </bevande>
+    </menu>
+
+    <menu nome="Menu Del Giorno">
+        <cibi>
+           
+	    <piatto>
+                <nome>Pappardelle al cinghiale</nome>
+                <descrizione>Ragù di cinghiale a lunga cottura</descrizione>
+                <categoria>PRIMO</categoria>
+                <prezzo>12.50</prezzo>
+                <allergeni>
+                    <allergene>1</allergene>
+                    <allergene>3</allergene>
+                </allergeni>
+            </piatto>
+
+	    <piatto>
+                <nome>Spezzatino di cinghiale</nome>
+                <descrizione>Cottura lenta con erbe aromatiche</descrizione>
+                <categoria>SECONDO</categoria>
+                <prezzo>10.00</prezzo>
+                <allergeni>
+                </allergeni>
+            </piatto>
+
+            <piatto>
+                <nome>Panna cotta</nome>
+                <descrizione>Con frutti di bosco</descrizione>
+                <categoria>DOLCE</categoria>
+                <prezzo>4.50</prezzo>
+                <allergeni>
+                    <allergene>5</allergene>
+                </allergeni>
+            </piatto>
+        </cibi>
+    </menu>
+
+    <menu nome="Carta Dei Vini">
+        <vino>
+            <nome>Sagrantino di Montefalco</nome>
+            <descrizione>Vino strutturato e intenso</descrizione>
+            <cantina>Arnaldo Caprai</cantina>
+            <colore>ROSSO</colore>
+            <opzioniPrezzo>
+                <opzione>
+                    <formato>Calice</formato>
+                    <prezzo>6.00</prezzo>
+                </opzione>
+                <opzione>
+                    <formato>Bottiglia 75cl</formato>
+                    <prezzo>28.00</prezzo>
+                </opzione>
+            </opzioniPrezzo>
+        </vino>
+
+        <vino>
+            <nome>Rosso di Montefalco</nome>
+            <descrizione>Rosso umbro morbido e speziato</descrizione>
+            <cantina>Lungarotti</cantina>
+            <colore>ROSSO</colore>
+            <opzioniPrezzo>
+                <opzione>
+                    <formato>Calice</formato>
+                    <prezzo>5.00</prezzo>
+                </opzione>
+                <opzione>
+                    <formato>Bottiglia 75cl</formato>
+                    <prezzo>22.00</prezzo>
+                </opzione>
+            </opzioniPrezzo>
+        </vino>
+
+        <vino>
+            <nome>Grechetto dei Colli Martani</nome>
+            <descrizione>Bianco fresco e profumato</descrizione>
+            <cantina>Antonelli</cantina>
+            <colore>BIANCO</colore>
+            <opzioniPrezzo>
+                <opzione>
+                    <formato>Calice</formato>
+                    <prezzo>5.00</prezzo>
+                </opzione>
+                <opzione>
+                    <formato>Bottiglia 75cl</formato>
+                    <prezzo>20.00</prezzo>
+                </opzione>
+            </opzioniPrezzo>
+        </vino>
+
+        <vino>
+            <nome>Chardonnay Brut</nome>
+            <descrizione>Spumante fresco e vivace</descrizione>
+            <cantina>Masciarelli</cantina>
+            <colore>SPUMANTE</colore>
+            <opzioniPrezzo>
+                <opzione>
+                    <formato>Calice</formato>
+                    <prezzo>6.50</prezzo>
+                </opzione>
+                <opzione>
+                    <formato>Bottiglia 75cl</formato>
+                    <prezzo>24.00</prezzo>
+                </opzione>
+            </opzioniPrezzo>
+        </vino>
+    </menu>
+
+</ristorante>
