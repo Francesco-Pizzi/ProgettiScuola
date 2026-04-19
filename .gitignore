@@ -8,8 +8,6 @@ out/
 build/
 **/build/
 
-# OS (opzionale ma consigliato)
+# OS
 .DS_Store
 Thumbs.db
-
-# (NON TOCCARE .git !!!)
