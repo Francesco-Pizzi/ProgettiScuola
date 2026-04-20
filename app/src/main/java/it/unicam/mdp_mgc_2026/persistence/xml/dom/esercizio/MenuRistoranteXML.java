@@ -6,6 +6,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.transform.*;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
 
 public class MenuRistoranteXML {
 
@@ -196,6 +199,208 @@ public class MenuRistoranteXML {
                 menu.aggiungiVino(vino);
             }
         }
+    }
+
+    private void salvaDocumento(Document doc) throws Exception {
+        TransformerFactory transformerFactory = TransformerFactory.newInstance();
+        Transformer transformer = transformerFactory.newTransformer();
+
+        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+        transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
+
+        DOMSource source = new DOMSource(doc);
+        StreamResult result = new StreamResult(new File(filePath));
+
+        transformer.transform(source, result);
+    }
+
+    public boolean aggiungiPiatto(String nomeMenu, Piatto nuovoPiatto) throws Exception {
+        Document doc = caricaDocumento();
+        Element root = doc.getDocumentElement();
+        NodeList listaMenu = root.getElementsByTagName("menu");
+
+        for (int i = 0; i < listaMenu.getLength(); i++) {
+            Node nodoMenu = listaMenu.item(i);
+
+            if (nodoMenu.getNodeType() == Node.ELEMENT_NODE) {
+                Element elementoMenu = (Element) nodoMenu;
+
+                if (nomeMenu.equals(elementoMenu.getAttribute("nome"))) {
+
+                    NodeList listaCibi = elementoMenu.getElementsByTagName("cibi");
+                    if (listaCibi.getLength() == 0) {
+                        return false;
+                    }
+
+                    Element elementoCibi = (Element) listaCibi.item(0);
+
+                    Element nuovoElementoPiatto = doc.createElement("piatto");
+
+                    Element nome = doc.createElement("nome");
+                    nome.setTextContent(nuovoPiatto.getNome());
+
+                    Element descrizione = doc.createElement("descrizione");
+                    descrizione.setTextContent(nuovoPiatto.getDescrizione());
+
+                    Element categoria = doc.createElement("categoria");
+                    categoria.setTextContent(nuovoPiatto.getCategoria().name());
+
+                    Element prezzo = doc.createElement("prezzo");
+                    prezzo.setTextContent(String.valueOf(nuovoPiatto.getPrezzo()));
+
+                    Element allergeni = doc.createElement("allergeni");
+                    for (Allergene a : nuovoPiatto.getAllergeni()) {
+                        Element allergene = doc.createElement("allergene");
+                        allergene.setTextContent(String.valueOf(a.getCodice()));
+                        allergeni.appendChild(allergene);
+                    }
+
+                    nuovoElementoPiatto.appendChild(nome);
+                    nuovoElementoPiatto.appendChild(descrizione);
+                    nuovoElementoPiatto.appendChild(categoria);
+                    nuovoElementoPiatto.appendChild(prezzo);
+                    nuovoElementoPiatto.appendChild(allergeni);
+
+                    elementoCibi.appendChild(nuovoElementoPiatto);
+
+                    salvaDocumento(doc);
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public boolean rimuoviPiatto(String nomeMenu, String nomePiattoDaRimuovere) throws Exception {
+        Document doc = caricaDocumento();
+        Element root = doc.getDocumentElement();
+        NodeList listaMenu = root.getElementsByTagName("menu");
+
+        for (int i = 0; i < listaMenu.getLength(); i++) {
+            Node nodoMenu = listaMenu.item(i);
+
+            if (nodoMenu.getNodeType() == Node.ELEMENT_NODE) {
+                Element elementoMenu = (Element) nodoMenu;
+
+                if (nomeMenu.equals(elementoMenu.getAttribute("nome"))) {
+                    NodeList listaCibi = elementoMenu.getElementsByTagName("cibi");
+                    if (listaCibi.getLength() == 0) {
+                        return false;
+                    }
+
+                    Element elementoCibi = (Element) listaCibi.item(0);
+                    NodeList listaPiatti = elementoCibi.getElementsByTagName("piatto");
+
+                    for (int j = 0; j < listaPiatti.getLength(); j++) {
+                        Node nodoPiatto = listaPiatti.item(j);
+
+                        if (nodoPiatto.getNodeType() == Node.ELEMENT_NODE) {
+                            Element elementoPiatto = (Element) nodoPiatto;
+
+                            String nomePiatto = getTestoTagObbligatorio(elementoPiatto, "nome").trim();
+                            String nomeDaRimuovere = nomePiattoDaRimuovere.trim();
+
+                            if (nomePiatto.equalsIgnoreCase(nomeDaRimuovere)) {
+                                elementoCibi.removeChild(elementoPiatto);
+                                salvaDocumento(doc);
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public boolean modificaPiatto(String nomeMenu, String nomePiattoDaModificare, Piatto nuovoPiatto) throws Exception {
+        Document doc = caricaDocumento();
+        Element root = doc.getDocumentElement();
+        NodeList listaMenu = root.getElementsByTagName("menu");
+
+        for (int i = 0; i < listaMenu.getLength(); i++) {
+            Node nodoMenu = listaMenu.item(i);
+
+            if (nodoMenu.getNodeType() == Node.ELEMENT_NODE) {
+                Element elementoMenu = (Element) nodoMenu;
+
+                if (nomeMenu.equals(elementoMenu.getAttribute("nome"))) {
+                    NodeList listaPiatti = elementoMenu.getElementsByTagName("piatto");
+
+                    for (int j = 0; j < listaPiatti.getLength(); j++) {
+                        Node nodoPiatto = listaPiatti.item(j);
+
+                        if (nodoPiatto.getNodeType() == Node.ELEMENT_NODE) {
+                            Element elementoPiatto = (Element) nodoPiatto;
+
+                            String nomePiatto = getTestoTagObbligatorio(elementoPiatto, "nome").trim();
+                            String nomeDaModificare = nomePiattoDaModificare.trim();
+
+                            if (nomePiatto.equalsIgnoreCase(nomeDaModificare)) {
+
+                                // aggiorno nome
+                                elementoPiatto.getElementsByTagName("nome")
+                                        .item(0)
+                                        .setTextContent(nuovoPiatto.getNome());
+
+                                // descrizione
+                                NodeList descrizioni = elementoPiatto.getElementsByTagName("descrizione");
+
+                                if (descrizioni.getLength() > 0) {
+                                    descrizioni.item(0).setTextContent(nuovoPiatto.getDescrizione());
+                                } else if (nuovoPiatto.getDescrizione() != null && !nuovoPiatto.getDescrizione().isBlank()) {
+                                    Element descrizioneEl = doc.createElement("descrizione");
+                                    descrizioneEl.setTextContent(nuovoPiatto.getDescrizione());
+
+                                    Node categoriaNode = elementoPiatto.getElementsByTagName("categoria").item(0);
+                                    elementoPiatto.insertBefore(descrizioneEl, categoriaNode);
+                                }
+
+                                // categoria
+                                elementoPiatto.getElementsByTagName("categoria")
+                                        .item(0)
+                                        .setTextContent(nuovoPiatto.getCategoria().name());
+
+                                // prezzo
+                                elementoPiatto.getElementsByTagName("prezzo")
+                                        .item(0)
+                                        .setTextContent(String.valueOf(nuovoPiatto.getPrezzo()));
+
+                                // allergeni
+                                NodeList listaAllergeni = elementoPiatto.getElementsByTagName("allergeni");
+                                Element allergeniEl;
+
+                                if (listaAllergeni.getLength() > 0) {
+                                    allergeniEl = (Element) listaAllergeni.item(0);
+
+                                    // svuoto
+                                    while (allergeniEl.hasChildNodes()) {
+                                        allergeniEl.removeChild(allergeniEl.getFirstChild());
+                                    }
+                                } else {
+                                    allergeniEl = doc.createElement("allergeni");
+                                    elementoPiatto.appendChild(allergeniEl);
+                                }
+
+                                // aggiungo nuovi allergeni
+                                for (Allergene a : nuovoPiatto.getAllergeni()) {
+                                    Element allergeneEl = doc.createElement("allergene");
+                                    allergeneEl.setTextContent(String.valueOf(a.getCodice()));
+                                    allergeniEl.appendChild(allergeneEl);
+                                }
+
+                                salvaDocumento(doc);
+                                return true;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return false;
     }
 
 }
