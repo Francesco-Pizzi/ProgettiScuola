@@ -14,10 +14,18 @@ public class Esame {
         this.valutatore = valutatore;
     }
 
+    public String getNome() {return this.nome;}
+
     public void sostieniEsame (Studente studente){
         Random random = new Random();
         int risposteE = random.nextInt(61);
         int voto = valutatore.assegnaVoto(studente, risposteE);
         System.out.println(studente.getNomeCompleto() + " Risposte esatte: " + risposteE + " Voto assegnato: " + voto);
+        if ((voto >= 18 && voto <= 30) || voto == 31){
+            studente.getLibretto().registraEsameSuperato(this, voto);
+            System.out.println("Esame registrato");
+        } else {
+            System.out.println("Esame non superato");
+        }
     }
 }
