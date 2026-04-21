@@ -12,8 +12,6 @@ public class Main {
 
         Corso c1 = new Corso("MDP", "Fornari");
 
-        Persona persona1 = new Persona("Mario", "Rossi");
-
         Esame e1 = new Esame("MDP", p1);
 
         SistemaAutomatico sA = new SistemaAutomatico("chatGPT");
@@ -23,6 +21,8 @@ public class Main {
         s1.saluta();
         s2.saluta();
         p1.presenta();
+        s1.presentati();
+        s2.presentati();
 
         c1.iscriviStudente(s1);
         c1.iscriviStudente(s2);

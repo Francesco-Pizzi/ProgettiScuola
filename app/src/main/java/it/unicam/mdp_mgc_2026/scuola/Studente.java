@@ -19,4 +19,8 @@ public class Studente extends Persona {
         System.out.println("Buongiorno, io sono: " + getNomeCompleto());
     }
 
+    @Override
+    public void presentati(){
+        System.out.println("Buongiorno, io sono astratto: " + getNomeCompleto());
+    }
 }

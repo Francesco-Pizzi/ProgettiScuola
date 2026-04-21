@@ -1,6 +1,6 @@
 package it.unicam.mdp_mgc_2026.scuola;
 
-public class Persona {
+public abstract class Persona {
     private String nome;
     private String cognome;
 
@@ -26,4 +26,6 @@ public class Persona {
     public String getNomeCompleto(){
         return this.nome + " " + this.cognome;
     }
+
+    public abstract void presentati();
 }
