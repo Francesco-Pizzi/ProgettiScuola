@@ -1,4 +1,4 @@
-package it.unicam.mdp_mgc_2026.scuola;
+package it.unicam.mdp_mgc_2026.scuola.Model;
 
 public abstract class Persona {
     private String nome;

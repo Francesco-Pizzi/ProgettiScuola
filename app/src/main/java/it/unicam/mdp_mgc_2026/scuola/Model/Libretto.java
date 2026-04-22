@@ -1,9 +1,12 @@
-package it.unicam.mdp_mgc_2026.scuola;
+package it.unicam.mdp_mgc_2026.scuola.Model;
+
+import it.unicam.mdp_mgc_2026.scuola.Contratti.CalcolatoreMedia;
+import it.unicam.mdp_mgc_2026.scuola.Contratti.VisualizzatoreEsami;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Libretto {
+public class Libretto implements CalcolatoreMedia, VisualizzatoreEsami {
 
     private final Studente studente;
     private final List<Esame> esamiSuperati = new ArrayList<>();
@@ -45,7 +48,7 @@ public class Libretto {
         return voti.size() >= 20 && calcolaMedia() >= 24.0;
     }
 
-    public void stampaEsamiSuperati() {
+    public void stampaEsamiSuperati(Studente studente) {
         System.out.println("Libretto di " + studente.getNomeCompleto());
 
         for (int i = 0; i < esamiSuperati.size(); i++) {

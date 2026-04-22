@@ -1,4 +1,7 @@
-package it.unicam.mdp_mgc_2026.scuola;
+package it.unicam.mdp_mgc_2026.scuola.Test;
+
+import it.unicam.mdp_mgc_2026.scuola.Model.Studente;
+import it.unicam.mdp_mgc_2026.scuola.Contratti.Valutatore;
 
 public class ValutatoreMinimo implements Valutatore {
 

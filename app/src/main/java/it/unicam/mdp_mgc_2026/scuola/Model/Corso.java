@@ -1,4 +1,4 @@
-package it.unicam.mdp_mgc_2026.scuola;
+package it.unicam.mdp_mgc_2026.scuola.Model;
 
 import java.util.ArrayList;
 import java.util.List;

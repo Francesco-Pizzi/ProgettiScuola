@@ -1,4 +1,6 @@
-package it.unicam.mdp_mgc_2026.scuola;
+package it.unicam.mdp_mgc_2026.scuola.Model;
+
+import it.unicam.mdp_mgc_2026.scuola.Contratti.Valutatore;
 
 public class SistemaAutomatico implements Valutatore {
     String nome;
