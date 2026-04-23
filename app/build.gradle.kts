@@ -26,6 +26,13 @@ dependencies {
     annotationProcessor("org.projectlombok:lombok:1.18.44")
 
     implementation("com.google.code.gson:gson:2.13.2")
+
+    runtimeOnly("org.postgresql:postgresql:42.6.0")
+
+    implementation("org.hibernate.orm:hibernate-core:6.4.4.Final")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.1.0")
+
+    implementation("com.h2database:h2:2.2.224")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.

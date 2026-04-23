@@ -24,7 +24,7 @@ public class Piatto extends VoceMenu {
         ANTIPASTO,
         PRIMO,
         SECONDO,
-        DOLCE,
+        DOLCE
     }
 
     public double getPrezzo() {return prezzo;}
