@@ -4,6 +4,8 @@ import it.unicam.mdp_mgc_2026.scuola.Contratti.Valutatore;
 
 import java.util.Random;
 
+import static it.unicam.mdp_mgc_2026.scuola.Utilita.FormattatoreVoto.formatta;
+
 public class Esame {
     private String nome;
     private Valutatore valutatore;
@@ -49,11 +51,7 @@ public class Esame {
     public void stampaEsito(Studente studente, int voto) {
         System.out.println("Esame di: " + nome);
         System.out.println("Studente: " + studente.getNomeCompleto());
-        System.out.println("Voto assegnato: " + formattaVoto(voto));
-    }
-
-    private String formattaVoto(int voto) {
-        return (voto == 31) ? "30 e lode" : String.valueOf(voto);
+        System.out.println("Voto assegnato: " + formatta(voto));
     }
 
     public void registraEsito(Studente studente, int voto) {
